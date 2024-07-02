@@ -37,42 +37,46 @@ const slides = [
   },
   {
     icon: <FaBrain className="w-12 h-12 mx-auto text-green-600" />,
-    description: "Learners can customize their own learning paths, ensuring a more personalized and effective learning experience. With flexible scheduling and self-paced learning options, users can balance their studies with other commitments  the learning process."
+    description: "Learners can customize their own learning paths, ensuring a more personalized and effective learning experience. With flexible scheduling and self-paced learning options, users can balance their studies with other commitments the learning process."
   }
 ];
 
 const CustomCarousel = ({ deviceType }) => {
   return (
-    <div className="relative w-full max-w-full mx-auto mt-10">
-      <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        ssr={true} 
-        infinite={true}
-        autoPlay={true} 
-        autoPlaySpeed={2000} 
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        deviceType={deviceType}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className="p-4">
-            <div className="h-full w-full bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-center items-center mb-6"> {/* Added mb-6 for margin bottom */}
-              {slide.icon}
-              <div className="mt-2 flex-grow flex items-center">
-                <p className="text-gray-600">{slide.description}</p>
+    <div className="max-w-screen-xl mx-auto p-4">
+      <div className="font-bold text-4xl p-2 text-center">Beyond Learning Management</div>
+      <div className="p-4 text-2xl text-gray-800 text-center">What sets Skill Lake AI LMS apart</div>
+      <div className="relative w-full mx-auto mt-10">
+        <Carousel
+          swipeable={true}
+          draggable={true}
+          showDots={true}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={2000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          deviceType={deviceType}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {slides.map((slide, index) => (
+            <div key={index} className="p-4">
+              <div className="h-full w-full bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-center items-center mb-6">
+                {slide.icon}
+                <div className="mt-2 flex-grow flex items-center">
+                  <p className="text-gray-600">{slide.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Carousel>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 };
