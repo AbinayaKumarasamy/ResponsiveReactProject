@@ -1,75 +1,232 @@
-import React, { useState } from 'react';
-import { IoIosSearch } from "react-icons/io";
+import React, { useEffect, useState } from 'react';
+import { IoIosSearch, IoMdClose, IoMdArrowDropdown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "../assets/Logo.png";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
+    const [isMobileOrTablet, setIsMobileOrTablet] = useState(window.innerWidth <= 1024);
+    const [dropdownOpen, setDropdownOpen] = useState({
+        solutions: false,
+        resources: false,
+        industry: false,
+        company: false
+    });
 
     const menuClicked = () => {
-        console.log("clicked");
         setOpen(!open);
     };
+
+    const handleResize = () => {
+        setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+
+    const toggleDropdown = (dropdown) => {
+        setDropdownOpen(prevState => ({
+            ...prevState,
+            [dropdown]: !prevState[dropdown]
+        }));
+    };
+
+    const handleMouseEnter = (dropdown) => {
+        setDropdownOpen(prevState => ({
+            ...prevState,
+            [dropdown]: true
+        }));
+    };
+
+    const handleMouseLeave = (dropdown) => {
+        setDropdownOpen(prevState => ({
+            ...prevState,
+            [dropdown]: false
+        }));
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <div className="flex justify-between items-center px-4 py-2">
-            <div className="flex items-center justify-between w-full md:w-auto sm:w-auto">
+        <div className="fixed top-0 left-0 w-full h-[7rem] bg-white shadow-lg z-30">
+            <div className="max-w-screen-xl mx-auto flex justify-between items-center py-2 px-4">
                 <img src={Logo} alt='logo' className='w-[10rem] h-[8rem]' />
-                <div className='sm:hidden md:hidden'>
-                    <button onClick={menuClicked}>
-                        <RxHamburgerMenu size={24} />
+                {/* RxHamburgerMenu for tablets and below */}
+                <div className='lg:hidden flex'>
+                    <button onClick={menuClicked} aria-label="Toggle menu" className="ml-auto">
+                        {open ? <IoMdClose size={24} /> : <RxHamburgerMenu size={24} />}
                     </button>
                 </div>
-            </div>
-            <div className={`sm:flex sm:items-center w-full sm:w-auto ${open ? "block" : "hidden"}`}>
-                <div className="flex flex-col sm:flex-row sm:space-x-8 justify-end items-center w-full sm:w-auto">
-                    <a href="#" className="px-4 py-2 text-gray-900 hover:text-blue-500">Features</a>
-                    <div className="relative group">
-                        <button className="px-4 py-2 text-gray-900 hover:text-blue-500">
-                            Solutions
+                {/* Desktop navigation menu */}
+                <div className="hidden lg:flex lg:items-center lg:space-x-4 w-full justify-end">
+                    <Link to="/Features" className="px-2 py-2 text-gray-900 hover:text-blue-500">Features</Link>
+                    <div className="relative group" onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={() => handleMouseLeave('solutions')}>
+                        <button 
+                            className="px-2 py-2 text-gray-900 hover:text-blue-500 flex items-center"
+                            onClick={() => toggleDropdown('solutions')}
+                        >
+                            Solutions <IoMdArrowDropdown className="ml-1" />
                         </button>
-                        <div className="hidden group-hover:block absolute bg-white shadow-lg mt-1 rounded-md">
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
-                        </div>
+                        {dropdownOpen.solutions && (
+                            <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10">
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
+                            </div>
+                        )}
                     </div>
-                    <div className="relative group">
-                        <button className="px-4 py-2 text-gray-900 hover:text-blue-500">
-                            Resources
+                    <div className="relative group" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={() => handleMouseLeave('resources')}>
+                        <button 
+                            className="px-2 py-2 text-gray-900 hover:text-blue-500 flex items-center"
+                            onClick={() => toggleDropdown('resources')}
+                        >
+                            Resources <IoMdArrowDropdown className="ml-1" />
                         </button>
-                        <div className="hidden group-hover:block absolute bg-white shadow-lg mt-1 rounded-md">
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
-                        </div>
+                        {dropdownOpen.resources && (
+                            <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10">
+                                <Link to="/Casestudy" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Case Studies</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</a>
+                                <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
+                                <Link to="/Usecase" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</a>
+                            </div>
+                        )}
                     </div>
-                    <div className="relative group">
-                        <button className="px-4 py-2 text-gray-900 hover:text-blue-500">
-                            Industry
+                    <div className="relative group" onMouseEnter={() => handleMouseEnter('industry')} onMouseLeave={() => handleMouseLeave('industry')}>
+                        <button 
+                            className="px-2 py-2 text-gray-900 hover:text-blue-500 flex items-center"
+                            onClick={() => toggleDropdown('industry')}
+                        >
+                            Industry <IoMdArrowDropdown className="ml-1" />
                         </button>
-                        <div className="hidden group-hover:block absolute bg-white shadow-lg mt-1 rounded-md">
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
-                        </div>
+                        {dropdownOpen.industry && (
+                            <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10">
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Retail</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Manufacturing</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">HealthCare</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Insurance</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Franchise</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Aviation</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Non Profit</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Construction</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Maritime</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Energy</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Telecom</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Automotive</a>
+                            </div>
+                        )}
                     </div>
-                    <a href="#" className="px-4 py-2 text-gray-900 hover:text-blue-500">Pricing</a>
-                    <div className="relative group">
-                        <button className="px-4 py-2 text-gray-900 hover:text-blue-500">
-                            Company
+                    <Link to="/Pricing" className="px-2 py-2 text-gray-900 hover:text-blue-500">Pricing</Link>
+                    <div className="relative group" onMouseEnter={() => handleMouseEnter('company')} onMouseLeave={() => handleMouseLeave('company')}>
+                        <button 
+                            className="px-2 py-2 text-gray-900 hover:text-blue-500 flex items-center"
+                            onClick={() => toggleDropdown('company')}
+                        >
+                            Company <IoMdArrowDropdown className="ml-1" />
                         </button>
-                        <div className="hidden group-hover:block absolute bg-white shadow-lg mt-1 rounded-md">
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
-                            <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
-                        </div>
+                        {dropdownOpen.company && (
+                            <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10">
+                                <Link to="/Partners" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Partners</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About Us</a>
+                            </div>
+                        )}
                     </div>
-                    <a href="#" className="px-4 py-2 text-gray-900 hover:text-blue-500">Contact Us</a>
-                    <IoIosSearch className="mt-2 sm:mt-0 sm:ml-4" />
-                    <button type="submit" className='rounded-md bg-blue-500 p-3 sm:ml-4 mt-2 sm:mt-0'>REQUEST A DEMO</button>
+                    <Link to="/ContactUs" className="px-2 py-2 text-gray-900 hover:text-blue-500">Contact Us</Link>
+                    <IoIosSearch className="mt-2 lg:mt-0 lg:ml-2" />
+                    <button type="submit" className='rounded-md bg-blue-500 p-3 lg:ml-2 mt-2 lg:mt-0'>REQUEST A DEMO</button>
                 </div>
             </div>
+            {/* Tablet and Mobile Menu */}
+            {(open || isMobileOrTablet) && (
+                <div className={`lg:hidden fixed top-0 left-0 w-full h-full bg-white z-40 ${open ? 'flex' : 'hidden'} flex-col items-center justify-center`}>
+                    <button onClick={menuClicked} className="absolute top-4 right-4" aria-label="Close menu">
+                        <IoMdClose size={24} />
+                    </button>
+                    <Link to="/Features" className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg">Features</Link>
+                    <div className="relative group">
+                        <button 
+                            className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg flex items-center"
+                            onClick={() => toggleDropdown('solutions')}
+                        >
+                            Solutions <IoMdArrowDropdown className="ml-1" />
+                        </button>
+                        {dropdownOpen.solutions && (
+                            <div className="bg-white shadow-lg mt-1 rounded-md z-10">
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 1</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 2</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Option 3</a>
+                            </div>
+                        )}
+                    </div>
+                    <div className="relative group">
+                        <button 
+                            className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg flex items-center"
+                            onClick={() => toggleDropdown('resources')}
+                        >
+                            Resources <IoMdArrowDropdown className="ml-1" />
+                        </button>
+                        {dropdownOpen.resources && (
+                            <div className="bg-white shadow-lg mt-1 rounded-md z-10">
+                                <Link to="/Casestudy" href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Case Studies</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</a>
+                                <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
+                                <Link to="/Usecase"  className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</a>
+                            </div>
+                        )}
+                    </div>
+                    <div className="relative group">
+                        <button 
+                            className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg flex items-center"
+                            onClick={() => toggleDropdown('industry')}
+                        >
+                            Industry <IoMdArrowDropdown className="ml-1" />
+                        </button>
+                        {dropdownOpen.industry && (
+                            <div className="bg-white shadow-lg mt-1 rounded-md z-10">
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Retail</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Manufacturing</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">HealthCare</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Insurance</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Franchise</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Aviation</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Non Profit</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Construction</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Maritime</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Energy</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Telecom</a>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Automotive</a>
+                            </div>
+                        )}
+                    </div>
+                    <Link to="/Pricing" className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg">Pricing</Link>
+                    <div className="relative group">
+                        <button 
+                            className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg flex items-center"
+                            onClick={() => toggleDropdown('company')}
+                        >
+                            Company <IoMdArrowDropdown className="ml-1" />
+                        </button>
+                        {dropdownOpen.company && (
+                            <div className="bg-white shadow-lg mt-1 rounded-md z-10">
+                                <Link to="/Partners" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Partners</Link>
+                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About Us</a>
+                            </div>
+                        )}
+                    </div>
+                    <a href="#" className="px-4 py-2 text-gray-900 hover:text-blue-500 text-lg">Contact Us</a>
+                    <button type="submit" className='rounded-md bg-blue-500 p-3 mt-4'>REQUEST A DEMO</button>
+                </div>
+            )}
         </div>
     );
 };
+
 export default NavBar;

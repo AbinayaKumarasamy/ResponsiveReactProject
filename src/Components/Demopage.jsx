@@ -3,19 +3,19 @@ import React from 'react';
 const Demopage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
-       
+        // Handle form submission logic here
     };
 
     return (
-        <div className="min-h-screen bg-white py-6 sm:py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-                <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4">
+        <div className="min-h-screen bg-white py-6 sm:py-12 p-10">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+                <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 md:px-4">
                     <h2 className="text-3xl font-extrabold text-gray-900">Schedule a Live Demo</h2>
                     <p className="text-black mt-4 text-lg md:text-xl">
                         Book a no-obligation demo with our experts and discover how Skill Lake can elevate your learning initiatives and grow your business.
                     </p>
                 </div>
-                <div className="w-full md:w-1/2 bg-[#95ade6] px-4 md:px-8 py-6 md:py-12 shadow-md rounded-lg">
+                <div className="w-full md:w-1/2 bg-[#95ade6] p-6 md:p-8 shadow-md rounded-lg">
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="mb-4">

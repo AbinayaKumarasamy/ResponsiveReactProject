@@ -1,84 +1,114 @@
-import React from 'react';
-import { FaBrain, FaChartLine, FaHandsHelping } from 'react-icons/fa';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React, { useState } from 'react';
+import { FaBrain, FaChartLine, FaChevronLeft, FaChevronRight, FaUsers } from 'react-icons/fa';
 
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+const FeaturesCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const data = [
+    {
+      icon: FaBrain,
+      title: "AI-powered Course Recommendations",
+      description: "Our AI engine curates the most relevant courses for users, significantly improving discoverability and creating more effective learning pathways."
+    },
+    {
+      icon: FaChartLine,
+      title: "Minimal Learning Curve",
+      description: "Getting started on Skill Lake is a breeze! Admins and course developers require minimal training to use it, while learners can easily navigate the platform thanks to its clean interface."
+    },
+    {
+      icon: FaUsers,
+      title: "Active Learner Engagement",
+      description: "We focus on making learning highly engaging through creative content formats, personalized course materials, and social learning aspects, vastly improving knowledge retention."
+    },
+    {
+      icon: FaBrain,
+      title: "New Card Title 1",
+      description: "New card content here."
+    },
+    {
+      icon: FaChartLine,
+      title: "New Card Title 2",
+      description: "New card content here."
+    },
+    {
+      icon: FaUsers,
+      title: "New Card Title 3",
+      description: "New card content here."
+    }
+  ];
 
-const slides = [
-  {
-    icon: <FaChartLine className="w-12 h-12 mx-auto text-green-600" />,
-    description: "Getting started on Skill Lake is a breeze! Admins and course developers require minimal training to use it, while learners can easily navigate the platform thanks to its clean interface. The platform supports a wide range of multi for tracking progress."
-  },
-  {
-    icon: <FaBrain className="w-12 h-12 mx-auto text-green-600" />,
-    description: "Our AI engine curates the most relevant courses for users, significantly improving discoverability and creating more effective learning pathways. Personalized recommendations help learners to stay engaged and make the most of their learning experience."
-  },
-  {
-    icon: <FaHandsHelping className="w-12 h-12 mx-auto text-green-600" />,
-    description: "We focus on making learning highly engaging through creative content formats, personalized course materials, and social learning aspects, vastly improving knowledge retention. Collaborative tools and interactive features enhance the learning process."
-  },
-  {
-    icon: <FaBrain className="w-12 h-12 mx-auto text-green-600" />,
-    description: "Learners can customize their own learning paths, ensuring a more personalized and effective learning experience. With flexible scheduling and self-paced learning options, users can balance their studies with other commitments the learning process."
-  }
-];
+  const totalSlides = data.length;
 
-const CustomCarousel = ({ deviceType }) => {
+  const nextSlide = () => {
+    setCurrentSlide(current => (current === totalSlides - 1 ? 0 : current + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(current => (current === 0 ? totalSlides - 1 : current - 1));
+  };
+
+  // Determine visible slides
+  const visibleSlides = [
+    data[currentSlide % totalSlides],
+    data[(currentSlide + 1) % totalSlides],
+    data[(currentSlide + 2) % totalSlides],
+  ];
+
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
-      <div className="font-bold text-4xl p-2 text-center">Beyond Learning Management</div>
-      <div className="p-4 text-2xl text-gray-800 text-center">What sets Skill Lake AI LMS apart</div>
-      <div className="relative w-full mx-auto mt-10">
-        <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          responsive={responsive}
-          ssr={true}
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={2000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          deviceType={deviceType}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          {slides.map((slide, index) => (
-            <div key={index} className="p-4">
-              <div className="h-full w-full bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-center items-center mb-6">
-                {slide.icon}
-                <div className="mt-2 flex-grow flex items-center">
-                  <p className="text-gray-600">{slide.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Carousel>
+    <div className="container mx-auto py-12 px-4 relative">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold">Beyond Learning Management</h1>
+        <p className="text-lg text-green-500 mt-2">What sets Skill Lake AI LMS apart</p>
       </div>
+
+      <div className="flex overflow-x-auto no-scrollbar">
+        {visibleSlides.map((item, index) => (
+          <div key={index} className="flex-shrink-0 w-full md:w-1/3 p-4">
+            <div className="bg-white rounded-lg shadow-lg h-full p-6 flex flex-col justify-between">
+              <div className="flex items-center mb-4">
+                <div className="bg-green-500 text-white rounded-full p-3">
+                  {React.createElement(item.icon, { className: "w-8 h-8" })}
+                </div>
+                <div className="text-gray-400 ml-4">{index + 1}</div>
+              </div>
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
+            </div>
+          </div>
+        ))}
+        {/* Empty divs to fill remaining space */}
+        {visibleSlides.length < 3 && (
+          Array.from({ length: 3 - visibleSlides.length }).map((_, index) => (
+            <div key={`empty-${index}`} className="flex-shrink-0 w-full md:w-1/3 p-4"></div>
+          ))
+        )}
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="flex justify-center mt-4">
+        {data.map((_, index) => (
+          <span
+            key={index}
+            className={`inline-block w-3 h-3 mx-1 rounded-full cursor-pointer ${index >= currentSlide && index < currentSlide + 3 ? 'bg-green-500' : 'bg-gray-300'}}
+            onClick={() => setCurrentSlide(index)`}
+          ></span>
+        ))}
+      </div>
+
+      {/* Arrows */}
+      <button
+        className="absolute left-0 top-0 mt-4 md:mt-8 ml-3 md:ml-8 bg-white text-gray-500 rounded-full shadow-md p-3"
+        onClick={prevSlide}
+      >
+        <FaChevronLeft />
+      </button>
+      <button
+        className="absolute right-0 top-0 mt-4 md:mt-8 mr-3 md:mr-8 bg-white text-gray-500 rounded-full shadow-md p-3"
+        onClick={nextSlide}
+      >
+        <FaChevronRight />
+      </button>
     </div>
   );
-};
+}
 
-export default CustomCarousel;
+export default FeaturesCarousel;

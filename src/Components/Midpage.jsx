@@ -3,30 +3,30 @@ import { FaRegCommentDots, FaFileDownload, FaClipboardList, FaVideo, FaBlog } fr
 
 const Midpage = () => {
   return (
-    <div className="font-sans bg-gray-100 min-h-full">
-      <div className="bg-gradient-to-r from-[#1c143b57] to-[#1d499f] p-6 sm:p-8 lg:p-10">
+    <div className="font-sans text-black bg-gray-100 min-h-full lg:p-[5rem]">
+      <div className="p-6 sm:p-8 ">
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center py-6 text-white">
+          <div className="text-center py-6 ">
             <h1 className="text-3xl sm:text-4xl font-bold">Hear From The Experts</h1>
             <p className="text-lg mt-2">Gain deep insights from our tech experts and stay updated with the latest buzz in the tech world.</p>
           </div>
 
          
           <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 lg:space-x-8 my-6">
-            <a href="#" className="flex items-center text-white font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
+            <a href="#" className="flex items-center font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
               <FaFileDownload className="h-6 w-6 mr-2" />
               Downloadables
             </a>
-            <a href="#" className="flex items-center text-white font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
+            <a href="#" className="flex items-center font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
               <FaClipboardList className="h-6 w-6 mr-2" />
               Case Studies
             </a>
-            <a href="#" className="flex items-center text-white font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
+            <a href="#" className="flex items-center  font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
               <FaVideo className="h-6 w-6 mr-2" />
               Videos
             </a>
-            <a href="#" className="flex items-center text-white font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
+            <a href="#" className="flex items-center  font-medium hover:text-[#0b2a70] transition-colors duration-300 m-2 sm:m-0">
               <FaBlog className="h-6 w-6 mr-2" />
               Blogs
             </a>

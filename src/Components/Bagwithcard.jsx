@@ -3,17 +3,17 @@ import bg from '../assets/pic1.jpg';
 
 const Bagwithcard = () => {
   return (
-    <div className='px-4 lg:px-16 lg:py-24 clear-both'>
+    <div className='lg:px-[10rem] lg:py-24 clear-both p-10'>
       <div className='text-2xl font-bold lg:text-5xl mb-8 text-center'>
         Skill Lake Empowers L&D Teams and Learners
       </div>
       <div className='flex flex-col lg:flex-row gap-8'>
-        <div className="rounded-md overflow-hidden h-[35rem] w-full lg:w-1/2">
+        <div className="rounded-md overflow-hidden w-full lg:w-[50%]">
           <div
-            className="h-full w-full bg-cover bg-center flex items-end justify-center p-4"
+            className="h-[35rem] lg:h-[25rem] bg-cover bg-center flex items-end justify-center p-4"
             style={{ 
               backgroundImage: `url(${bg})`,
-              backgroundSize: '150%', 
+              backgroundSize: 'cover', 
               backgroundPosition: 'center' 
             }}
           >
@@ -32,12 +32,12 @@ const Bagwithcard = () => {
             </div>
           </div>
         </div>
-        <div className="rounded-md overflow-hidden h-[35rem] w-full lg:w-1/2">
+        <div className="rounded-md overflow-hidden w-full lg:w-[50%]">
           <div
-            className="h-full w-full bg-cover bg-center flex items-end justify-center p-4"
+            className="h-[35rem] lg:h-[25rem] bg-cover bg-center flex items-end justify-center p-4"
             style={{ 
               backgroundImage: `url(${bg})`,
-              backgroundSize: '80%', 
+              backgroundSize: 'cover', 
               backgroundPosition: 'center' 
             }}
           >
@@ -57,28 +57,28 @@ const Bagwithcard = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center w-full mt-8 text-white">
-  <div className="w-full p-10 bg-blue-400 rounded-lg shadow-inner lg:w-[35rem] lg:h-[25rem] lg:p-16 h-auto">
-    <div className="mt-2 text-2xl font-bold text-center lg:mt-4 lg:text-4xl">
-      Learning on the Go!
-    </div>
-    <div className="p-4 text-2xl lg:p-[1rem]">
-      Your Pocket-sized Learning Companion
-    </div>
-    <div className="mt-2 lg:mt-4">
-      Our intuitive and secure e-learning mobile app lets your users conveniently access and engage with course content on their phones or tablets.
-    </div>
-    <div className="flex justify-center mt-2 lg:mt-4">
-      <button
-        type="submit"
-        className="p-3 mt-2 border border-white rounded-md bg-transparent sm:ml-4 sm:mt-0"
-      >
-        KNOW MORE
-      </button>
-    </div>
-  </div>
-</div>
-
+      <div className="flex justify-center mt-8 text-white">
+        <div className="shadow-inner rounded-lg bg-blue-400 w-full lg:w-[75%] h-auto p-10 lg:p-20">
+          <div className="text-2xl lg:text-4xl font-bold mt-2 lg:mt-4 text-center">
+            Learning on the Go!
+          </div>
+          <div className="p-4 text-2xl lg:p-[1rem]">
+            Your Pocket-sized Learning Companion
+          </div>
+          <div className="mt-2 lg:mt-4 p-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus tempora impedit similique. Quisquam odit delectus magnam debitis? Temporibus voluptates cumque, exercitationem rem nobis libero, voluptatum atque facilis molestias quas magnam saepe dolore consequatur corporis corrupti obcaecati pariatur. Odio, itaque dicta? Maiores consectetur modi natus itaque, amet aut? Ducimus, illum accusantium! officia nisi excepturi blanditiis! Veritatis fugit modi reiciendis unde dolorem non dolores expedita. Quasi, commodi?
+            Our intuitive and secure e-learning mobile app lets your users conveniently access and engage with course content on their phones or tablets.
+          </div>
+          <div className="flex justify-center mt-2 lg:mt-4">
+            <button
+              type="submit"
+              className="p-3 mt-2 border border-white rounded-md bg-transparent sm:ml-4 sm:mt-0"
+            >
+              KNOW MORE
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,10 +2,9 @@ import React from 'react';
 import { BsDot } from "react-icons/bs";
 import { IoMdVideocam } from "react-icons/io";
 import pic from "../assets/pic1.jpg";
-import pic2 from "../assets/pic2.webp";
 const Page1 = () => {
   return (
-    <div className='relative mx-4 md:mx-8'>
+    <div className='mt-[8rem] relative mx-4 md:mx-8 lg:px-[5rem]'>
       <div className='flex flex-col md:flex-row justify-between items-center'>
         <div className='text-center md:text-left'>
           <div className='text-4xl md:text-6xl font-bold'>Your Lightning Fast Delivery Partner</div>
@@ -37,12 +36,13 @@ const Page1 = () => {
         </div>
       </div>
       <div className='mt-8 flex text-white justify-center w-full'>
-        <div className='shadow-inner rounded-lg bg-blue-400 w-full lg:w-[45rem] lg:h-[35rem] h-auto p-10 lg:p-20'>
+        <div className='shadow-inner rounded-lg bg-blue-400 w-full lg:w-[75rem] lg:h-[35rem] h-auto p-10 lg:p-20'>
           <div className='text-2xl lg:text-4xl font-bold mt-2 lg:mt-4 text-center'>
             AI LMS for Effective Learning and Skill Development
           </div>
-          <div className='mt-2 lg:mt-4'>
-            Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship, or other means, with or without luggage, and can be one way or round trip. Travel can also include relatively short stays between successive movements, as in the case of tourism.
+          <div className='mt-2 lg:mt-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam est totam minima ad reiciendis enim natus. Nostrum, labore esse! Explicabo excepturi necessitatibus dignissimos quasi repudiandae, qui animi, aut, voluptatibus velit distinctio obcaecati? Iure velit commodi amet tempore nisi consequatur, libero tempora corrupti, consequuntur nemo ex rerum, possimus quia laudantium consectetur accusantium illo eligendi fugit esse? Illum illo explicabo nisi adipisci consequatur natus animi reiciendis deleniti. Ducimus magni nobis eum delectus? Voluptate dolorem beatae eveniet ducimus ut tenetur quis voluptates molestias, odit numquam dicta fugit ipsam iusto porro modi id accusantium labore, commodi atque sequi, recusandae minima quod nam veniam! Nam.
+            Travel is the movement of people between distant geographical locations. </div>
+          <div className='p-3'>Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship, or other means, with or without luggage, and can be one way or round trip. Travel can also include relatively short stays between successive movements, as in the case of tourism.
           </div>
         </div>
       </div>

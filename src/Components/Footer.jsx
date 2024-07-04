@@ -4,11 +4,10 @@ import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const App = () => {
   return (
     <div className="bg-[#071532] text-white min-h-full flex flex-col justify-between">
-      
-      <div className="p-4 sm:p-8">
+      <div className="px-8 sm:px-12 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="border-r border-white border-opacity-10 pr-4 lg:pr-0">
-            <h2 className="text-3 font-bold mb-4">SOLUTIONS</h2>
+          <div className="border-r border-white border-opacity-10 pr-8">
+            <h2 className="text-xl font-bold mb-4">SOLUTIONS</h2>
             <ul className="space-y-2">
               <li><a href="#" className="hover:underline">Learning Management System</a></li>
               <li><a href="#" className="hover:underline">LMS Mobile App</a></li>
@@ -22,11 +21,11 @@ const App = () => {
             </ul>
           </div>
 
-          <div className="border-r border-white border-opacity-10 pr-4 lg:pr-0">
-            <h2 className="text-3 font-bold mb-4 text-center">INDUSTRY</h2>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-              <div className="space-y-2">
-                <ul className="space-y-2">
+          <div className="border-r border-white border-opacity-10 sm:pr-8">
+            <h2 className="text-xl font-bold mb-4 sm:text-left text-center">INDUSTRY</h2>
+            <div className="flex flex-col sm:flex-row gap-8">
+              <div className="space-y-5">
+                <ul className="space-y-5">
                   <li><a href="#" className="hover:underline">Retail</a></li>
                   <li><a href="#" className="hover:underline">Manufacturing</a></li>
                   <li><a href="#" className="hover:underline">Healthcare</a></li>
@@ -35,8 +34,8 @@ const App = () => {
                   <li><a href="#" className="hover:underline">Aviation</a></li>
                 </ul>
               </div>
-              <div className="space-y-2">
-                <ul className="space-y-2">
+              <div>
+                <ul className="space-y-5">
                   <li><a href="#" className="hover:underline">Non-Profit</a></li>
                   <li><a href="#" className="hover:underline">Construction</a></li>
                   <li><a href="#" className="hover:underline">Maritime</a></li>
@@ -48,8 +47,8 @@ const App = () => {
             </div>
           </div>
 
-          <div className="border-r border-white border-opacity-10 pr-4 lg:pr-0">
-            <h2 className="text-3 font-bold mb-4">RESOURCES</h2>
+          <div className="border-r border-white border-opacity-10 pr-8">
+            <h2 className="text-xl font-bold mb-4">RESOURCES</h2>
             <ul className="space-y-2">
               <li><a href="#" className="hover:underline">Features</a></li>
               <li><a href="#" className="hover:underline">Case Studies</a></li>
@@ -62,9 +61,9 @@ const App = () => {
             </ul>
           </div>
 
-          <div className="pr-4 lg:pr-0">
-            <h2 className="text-3 font-bold mb-4">COMPANY</h2>
-            <ul className="space-y-2">
+          <div className="pr-8">
+            <h2 className="text-xl font-bold mb-4">COMPANY</h2>
+            <ul className="space-y-6">
               <li><a href="#" className="hover:underline">About Us</a></li>
               <li><a href="#" className="hover:underline">Partners</a></li>
               <li><a href="#" className="hover:underline">Contact Us</a></li>
@@ -75,8 +74,7 @@ const App = () => {
         </div>
       </div>
 
-     
-      <footer className="p-4 bg-[#000001] text-white flex items-center justify-between">
+      <footer className="p-4 bg-[#000001] text-white flex items-center justify-between px-8">
         <div className="flex space-x-4">
           <a href="https://www.instagram.com" className="hover:text-gray-400">
             <FaInstagram size={24} />
