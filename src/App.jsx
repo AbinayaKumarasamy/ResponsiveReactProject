@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './Pages/HomePage'
-import Features from './Pages/Features'
-import NavBar from './Components/NavBar'
+import Features from './Components/Features'
+import NavBar from './Pages/NavBar'
 import Footer from './Components/Footer'
 import Partners from './Components/Partners'
 import ContactUs from './Components/ContactUs'
@@ -10,6 +10,9 @@ import Pricing from './Components/Pricing'
 import Help from './Components/Help'
 import Casestudy from './Components/Casestudy'
 import UseCase from './Components/UseCase'
+import Blog from './Components/Blog'
+import ReleaseNotes from './Components/ReleaseNotes'
+import Termofuse from './Components/Termofuse'
 const App = () => {
   return (
 
@@ -25,6 +28,9 @@ const App = () => {
         <Route path="/Help" element={<Help/>}/>
         <Route path="/Usecase" element={<UseCase/>}/>
         <Route path="/Casestudy" element={<Casestudy/>}/>
+        <Route path="/Blog" element={<Blog/>}/>
+        <Route path="/ReleaseNotes" element={<ReleaseNotes/>}/>
+        <Route path="/Termofuse" element={<Termofuse/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

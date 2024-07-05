@@ -3,27 +3,16 @@ import bg from '../assets/pic1.jpg';
 
 const Bagwithcard = () => {
   return (
-    <div className='lg:px-[10rem] lg:py-24 clear-both p-10'>
-      <div className='text-2xl font-bold lg:text-5xl mb-8 text-center'>
-        Skill Lake Empowers L&D Teams and Learners
-      </div>
+    <div className='lg:px-[6rem] lg:py-24 clear-both p-10'>
+      <div className='text-2xl font-bold lg:text-5xl mb-8 text-center'>Skill Lake Empowers L&D Teams and Learners</div>
       <div className='flex flex-col lg:flex-row gap-8'>
         <div className="rounded-md overflow-hidden w-full lg:w-[50%]">
-          <div
-            className="h-[35rem] lg:h-[25rem] bg-cover bg-center flex items-end justify-center p-4"
-            style={{ 
-              backgroundImage: `url(${bg})`,
-              backgroundSize: 'cover', 
-              backgroundPosition: 'center' 
-            }}
-          >
+          <div className="h-[35rem] lg:h-[25rem] bg-cover bg-center flex items-end justify-center p-4" style={{ 
+              backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center'  }}>
             <div className='w-full px-4 lg:px-8'>
               <div className='bg-white rounded-md p-4'>
-                <div className='bg-gray-400 rounded-md w-32 h-8 flex items-center justify-center'>
-                  L&D Teams
-                </div>
-                <div className='text-xl p-3 lg:text-3xl text-black mt-2'>
-                  Let's make learning easier and goal-oriented!
+                <div className='bg-gray-400 rounded-md w-32 h-8 flex items-center justify-center'>L&D Teams</div>
+                <div className='text-xl p-3 lg:text-3xl text-black mt-2'> Let's make learning easier and goal-oriented!
                 </div>
                 <div className='p-7 text-gray-800'>
                   Think of it as your control center for creating, implementing, and managing learning programs. Skill Lake handles everything from administration to assessments—a real bird’s-eye view of your learning initiatives!
@@ -57,8 +46,8 @@ const Bagwithcard = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-8 text-white">
-        <div className="shadow-inner rounded-lg bg-blue-400 w-full lg:w-[75%] h-auto p-10 lg:p-20">
+      <div className="mt-8 flex text-white justify-center w-full">
+        <div className="shadow-inner rounded-lg bg-blue-400 w-full lg:w-[70rem] lg:h-[30rem] h-auto p-10 lg:p-20">
           <div className="text-2xl lg:text-4xl font-bold mt-2 lg:mt-4 text-center">
             Learning on the Go!
           </div>
@@ -82,5 +71,4 @@ const Bagwithcard = () => {
     </div>
   );
 }
-
 export default Bagwithcard;

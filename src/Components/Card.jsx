@@ -3,14 +3,14 @@ import desk from '../assets/desk.jpeg';
 
 const Card = () => {
   return (
-    <div className="p-12">
+    <div className="lg:px-[6rem]">
       <div className="p-4 bg-white ">
         <div className="flex flex-col items-center lg:flex-row justify-between">
           <div className="p-3 text-center lg:text-left">
             <p className="font-bold text-2xl sm:text-3xl md:text-5xl text-gray-900">
               Future-proof Your Digital Learning Assets
             </p>
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium mt-2 text-gray-700 ">
+            <p className="text-xl sm:text-2xl md:text-3xl font-medium mt-2 text-gray-800 ">
               Course Creation & Legacy Content Modernization
             </p>
           </div>
@@ -24,13 +24,13 @@ const Card = () => {
           </div>
         </div>
         <div className="p-3 text-center lg:text-left">
-          <p className="text-lg sm:text-xl font-medium mt-2 text-gray-700 dark:text-gray-400">
+          <p className="text-lg sm:text-xl font-medium mt-2 text-gray-800 dark:text-gray-400">
             Build courses from scratch, give old learning materials a facelift, and get expert advice for a winning learning strategy.
           </p>
         </div>
       </div>
 
-      <div className="p-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="p-3 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="bg-white border border-gray-200 rounded-md shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <img className="rounded-md w-full" src={desk} alt="Technology acquisitions 2021" />

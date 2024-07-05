@@ -46,7 +46,6 @@ const FeaturesCarousel = () => {
     setCurrentSlide(current => (current === 0 ? totalSlides - 1 : current - 1));
   };
 
-  // Determine visible slides
   const visibleSlides = [
     data[currentSlide % totalSlides],
     data[(currentSlide + 1) % totalSlides],
@@ -75,15 +74,12 @@ const FeaturesCarousel = () => {
             </div>
           </div>
         ))}
-        {/* Empty divs to fill remaining space */}
         {visibleSlides.length < 3 && (
           Array.from({ length: 3 - visibleSlides.length }).map((_, index) => (
             <div key={`empty-${index}`} className="flex-shrink-0 w-full md:w-1/3 p-4"></div>
           ))
         )}
       </div>
-
-      {/* Pagination Dots */}
       <div className="flex justify-center mt-4">
         {data.map((_, index) => (
           <span
@@ -93,8 +89,6 @@ const FeaturesCarousel = () => {
           ></span>
         ))}
       </div>
-
-      {/* Arrows */}
       <button
         className="absolute left-0 top-0 mt-4 md:mt-8 ml-3 md:ml-8 bg-white text-gray-500 rounded-full shadow-md p-3"
         onClick={prevSlide}

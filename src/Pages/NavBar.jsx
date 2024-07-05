@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { IoIosSearch, IoMdClose, IoMdArrowDropdown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Logo from "../assets/Logo.png";
 import { Link } from 'react-router-dom';
+import Logo from "../assets/Logo.png";
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
@@ -51,9 +51,11 @@ const NavBar = () => {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-[7rem] bg-white shadow-lg z-30">
-            <div className="max-w-screen-xl mx-auto flex justify-between items-center py-2 px-4">
-                <img src={Logo} alt='logo' className='w-[10rem] h-[8rem]' />
+        <div className="fixed top-0 left-0 w-full h-[7rem] bg-white z-30 flex items-center">
+            <div className="max-w-screen-xl mx-auto flex justify-between items-center w-full px-4">
+                <Link to="/" className="flex-shrink-0">
+                    <img src={Logo} alt='logo' className='w-[10rem] h-[8rem] object-contain' />
+                </Link>
                 {/* RxHamburgerMenu for tablets and below */}
                 <div className='lg:hidden flex'>
                     <button onClick={menuClicked} aria-label="Toggle menu" className="ml-auto">
@@ -88,12 +90,12 @@ const NavBar = () => {
                         {dropdownOpen.resources && (
                             <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10">
                                 <Link to="/Casestudy" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Case Studies</Link>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</a>
+                                <Link to="/Blog" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</Link>
                                 <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
                                 <Link to="/Usecase" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
                                 <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
                                 <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</a>
+                                <Link to="/ReleaseNotes" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</Link>
                             </div>
                         )}
                     </div>
@@ -172,13 +174,13 @@ const NavBar = () => {
                         </button>
                         {dropdownOpen.resources && (
                             <div className="bg-white shadow-lg mt-1 rounded-md z-10">
-                                <Link to="/Casestudy" href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Case Studies</Link>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</a>
+                                <Link to="/Casestudy" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Case Studies</Link>
+                                <Link to="/Blog" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</Link>
                                 <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
-                                <Link to="/Usecase"  className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
+                                <Link to="/Usecase" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
                                 <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
                                 <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</a>
+                                <Link to="/ReleaseNotes" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</Link>
                             </div>
                         )}
                     </div>

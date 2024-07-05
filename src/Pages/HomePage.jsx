@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../Components/NavBar'
+import NavBar from './NavBar'
 import Page1 from '../Components/Page1' 
 import Bagwithcard from '../Components/Bagwithcard'
 import Carousel from '../Components/Carousel'

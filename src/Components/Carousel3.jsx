@@ -44,7 +44,7 @@ const slides = [
     ]
   },
   {
-    title: "Categorize learning materials by topic for easy access to relevant content.",
+    title: "Categorize learning materials by topic for easy access to relevant.",
     description: "Organize your content for better learning.",
     points: [
       "Topic-based organization",
@@ -98,7 +98,6 @@ const CustomCarousel = ({ deviceType }) => {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
             responsive={responsive}
             ssr={true}
             infinite={true}
@@ -110,14 +109,13 @@ const CustomCarousel = ({ deviceType }) => {
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
             deviceType={deviceType}
-            dotListClass="custom-dot-list-style mt-4"
-            itemClass="carousel-item"
+            itemClass="carousel-item px-4"
             customLeftArrow={<CustomLeftArrow />}
             customRightArrow={<CustomRightArrow />}
           >
             {slides.map((slide, index) => (
               <div key={index} className="p-4">
-                <div className="h-full bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-center items-center">
+                <div className="h-full bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-center items-center" style={{ height: '400px' }}>
                   <h2 className="text-2xl md:text-4xl font-bold">{slide.title}</h2>
                   <p className="mt-4 text-lg md:text-xl">{slide.description}</p>
                   <ul className="list-none mt-6 text-left">

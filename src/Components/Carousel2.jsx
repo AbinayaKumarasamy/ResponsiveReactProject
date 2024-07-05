@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-// Import your images
 import { default as image1, default as image3 } from '../assets/image.jpeg';
 import { default as image2, default as image4 } from '../assets/images.jpeg';
 
@@ -46,8 +44,7 @@ const slides = [
 
 const CustomCarousel = ({ deviceType }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const carouselRef = useRef(null); // Create a ref for the Carousel component
-
+  const carouselRef = useRef(null);
   const handleNext = () => {
     if (carouselRef.current) {
       carouselRef.current.next();
@@ -69,16 +66,16 @@ const CustomCarousel = ({ deviceType }) => {
         </div>
         <div className="w-full md:w-2/3 mt-4 md:mt-0 relative">
           <Carousel
-            ref={carouselRef} // Attach the ref to the Carousel component
+            ref={carouselRef} 
             swipeable={false}
             draggable={false}
             showDots={true}
-            arrows={false} // Disable default arrows
+            arrows={false} 
             responsive={responsive}
-            ssr={true} // Render carousel on server-side
+            ssr={true} 
             infinite={true}
-            autoPlay={true} // Enable autoplay
-            autoPlaySpeed={2000} // Set autoplay speed
+            autoPlay={true} 
+            autoPlaySpeed={2000}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
@@ -87,7 +84,7 @@ const CustomCarousel = ({ deviceType }) => {
             deviceType={deviceType}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
-            renderDotsOutside={true} // Render dots outside the carousel
+            renderDotsOutside={true}
             beforeChange={(nextSlide) => setCurrentSlide(nextSlide)}
           >
             {slides.map((slide, index) => (
@@ -118,5 +115,4 @@ const CustomCarousel = ({ deviceType }) => {
     </div>
   );
 };
-
 export default CustomCarousel;

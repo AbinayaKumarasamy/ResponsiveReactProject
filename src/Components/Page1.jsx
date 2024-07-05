@@ -4,7 +4,7 @@ import { IoMdVideocam } from "react-icons/io";
 import pic from "../assets/pic1.jpg";
 const Page1 = () => {
   return (
-    <div className='mt-[8rem] relative mx-4 md:mx-8 lg:px-[5rem]'>
+    <div className='mt-[6rem] relative mx-4 md:mx-8 lg:px-[4rem]'>
       <div className='flex flex-col md:flex-row justify-between items-center'>
         <div className='text-center md:text-left'>
           <div className='text-4xl md:text-6xl font-bold'>Your Lightning Fast Delivery Partner</div>
@@ -36,7 +36,7 @@ const Page1 = () => {
         </div>
       </div>
       <div className='mt-8 flex text-white justify-center w-full'>
-        <div className='shadow-inner rounded-lg bg-blue-400 w-full lg:w-[75rem] lg:h-[35rem] h-auto p-10 lg:p-20'>
+        <div className='shadow-inner rounded-lg bg-blue-400 w-full lg:w-[70rem] lg:h-[30rem] h-auto p-10 lg:p-20'>
           <div className='text-2xl lg:text-4xl font-bold mt-2 lg:mt-4 text-center'>
             AI LMS for Effective Learning and Skill Development
           </div>
