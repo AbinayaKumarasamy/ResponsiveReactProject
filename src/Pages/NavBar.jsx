@@ -93,8 +93,8 @@ const NavBar = () => {
                                 <Link to="/Blog" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</Link>
                                 <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
                                 <Link to="/Usecase" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
+                                <Link to="/Videos" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</Link>
+                                <Link to="/Downloads" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</Link>
                                 <Link to="/ReleaseNotes" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</Link>
                             </div>
                         )}
@@ -178,8 +178,8 @@ const NavBar = () => {
                                 <Link to="/Blog" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Blogs</Link>
                                 <Link to="/Help" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Help</Link>
                                 <Link to="/Usecase" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Use Case</Link>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</a>
+                                <Link to="/VIdeos" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Videos</Link>
+                                <Link to="/Downloads" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Downloads</Link>
                                 <Link to="/ReleaseNotes" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Release Notes</Link>
                             </div>
                         )}

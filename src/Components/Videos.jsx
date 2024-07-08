@@ -1,6 +1,6 @@
 import React from 'react';
 import pricepage from '../assets/pricepage.jpeg';
-import top from '../assets/top.jpg'; 
+import top from '../assets/top.jpeg'; 
 const Videos = () => {
   return (
     <div className="p-12">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -50,25 +51,25 @@ const App = () => {
           <div className="border-r border-white border-opacity-10 pr-8">
             <h2 className="text-xl font-bold mb-4">RESOURCES</h2>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:underline">Features</a></li>
-              <li><a href="#" className="hover:underline">Case Studies</a></li>
-              <li><a href="#" className="hover:underline">Blogs</a></li>
-              <li><a href="#" className="hover:underline">Help</a></li>
-              <li><a href="#" className="hover:underline">Use Cases</a></li>
-              <li><a href="#" className="hover:underline">Videos</a></li>
-              <li><a href="#" className="hover:underline">Downloads</a></li>
-              <li><a href="#" className="hover:underline">Release Notes</a></li>
+              <li><Link to="/Features" className="hover:underline">Features</Link></li>
+              <li><Link to="/Casestudy" className="hover:underline">Case Studies</Link></li>
+              <li><Link to="/Blog" className="hover:underline">Blogs</Link></li>
+              <li><Link to="/Help" className="hover:underline">Help</Link></li>
+              <li><Link to="/Usecase" className="hover:underline">Use Cases</Link></li>
+              <li><Link to="/Videos" className="hover:underline">Videos</Link></li>
+              <li><Link to="/Downloads" className="hover:underline">Downloads</Link></li>
+              <li><Link to="/ReleaseNotes" className="hover:underline">Release Notes</Link></li>
             </ul>
           </div>
 
           <div className="pr-8">
             <h2 className="text-xl font-bold mb-4">COMPANY</h2>
             <ul className="space-y-6">
-              <li><a href="#" className="hover:underline">About Us</a></li>
-              <li><a href="#" className="hover:underline">Partners</a></li>
-              <li><a href="#" className="hover:underline">Contact Us</a></li>
-              <li><a href="#" className="hover:underline">Terms of Use</a></li>
-              <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+              <li><Link to="/Aboutus" className="hover:underline">About Us</Link></li>
+              <li><Link to="/Partners" className="hover:underline">Partners</Link></li>
+              <li><Link to="/Contactus" className="hover:underline">Contact Us</Link></li>
+              <li><Link to="/Termsofuse" className="hover:underline">Terms of Use</Link></li>
+              <li><Link to="/Privacypolicy" className="hover:underline">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>

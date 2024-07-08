@@ -13,6 +13,8 @@ import UseCase from './Components/UseCase'
 import Blog from './Components/Blog'
 import ReleaseNotes from './Components/ReleaseNotes'
 import Termofuse from './Components/Termofuse'
+import PrivacyPolicy from './Components/PrivacyPolicy'
+import Videos from './Components/Videos'
 const App = () => {
   return (
 
@@ -30,7 +32,9 @@ const App = () => {
         <Route path="/Casestudy" element={<Casestudy/>}/>
         <Route path="/Blog" element={<Blog/>}/>
         <Route path="/ReleaseNotes" element={<ReleaseNotes/>}/>
-        <Route path="/Termofuse" element={<Termofuse/>}/>
+        <Route path="/Termsofuse" element={<Termofuse/>}/>
+        <Route path="/Privacypolicy" element={<PrivacyPolicy/>}/>
+        <Route path="/Videos" element={<Videos/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
