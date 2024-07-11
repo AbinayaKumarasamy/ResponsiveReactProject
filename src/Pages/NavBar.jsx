@@ -139,10 +139,8 @@ const NavBar = () => {
                         </button>
                         {dropdownOpen.company && (
                             <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10 whitespace-nowrap">
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Contact</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Leadership</a>
-                                <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Newsroom</a>
+                                <Link to="/Partners" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Partners</Link>
+                                <Link to="/Aboutus" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About Us</Link>
                             </div>
                         )}
                     </div>
@@ -238,11 +236,9 @@ const NavBar = () => {
                                 </button>
                                 {dropdownOpen.company && (
                                     <div className="ml-4">
-                                        <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About</a>
-                                        <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Contact</a>
-                                        <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Leadership</a>
-                                        <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Newsroom</a>
-                                    </div>
+                                        <Link to="/Partners" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Partners</Link>
+                                <Link to="/Aboutus" className="block px-4 py-2 text-gray-900 hover:text-blue-500">About Us</Link>
+                            </div>
                                 )}
                             </div>
                             <div className='flex items-center space-x-2'>
