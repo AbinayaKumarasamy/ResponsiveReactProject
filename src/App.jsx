@@ -15,6 +15,15 @@ import ReleaseNotes from './Components/ReleaseNotes'
 import Termofuse from './Components/Termofuse'
 import PrivacyPolicy from './Components/PrivacyPolicy'
 import Videos from './Components/Videos'
+import CorporateTrainingPlatform from './Components/CorporateTrainingPlatform'
+import AboutUs from './Components/AboutUs'
+import PeopleDevelpmentPlatform from './Components/PeopleDevelpomentPlatform'
+import TrainingManagementSystem from './Components/TrainingManagementSystem'
+import ContentCreationServices from './Components/ContentCreationServices'
+import PerformanceReviewSystem from './Components/PerformanceReviewSystem'
+import Industry from './Components/Industry'
+import RequestDemo from './Components/RequestDemo'
+import Download from './Components/Download'
 const App = () => {
   return (
 
@@ -35,6 +44,15 @@ const App = () => {
         <Route path="/Termsofuse" element={<Termofuse/>}/>
         <Route path="/Privacypolicy" element={<PrivacyPolicy/>}/>
         <Route path="/Videos" element={<Videos/>}/>
+        <Route path="/Corporatetrainingplatform" element={<CorporateTrainingPlatform/>}/>
+        <Route path="/Peopledevelpmentplatform" element={<PeopleDevelpmentPlatform/>}/>
+        <Route path="TrainingManagementSystem" element={<TrainingManagementSystem/>}/>
+        <Route path="Contentcreationservices" element={<ContentCreationServices/>}/>
+        <Route path="/Performancereviewsystem" element={<PerformanceReviewSystem/>}/>
+        <Route path="/Industry" element={<Industry/>}/>
+        <Route path="/Aboutus" element={<AboutUs/>}/>
+        <Route path="/Requestdemo" element={<RequestDemo/>}/>
+        <Route path="/Download" element={<Download/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
