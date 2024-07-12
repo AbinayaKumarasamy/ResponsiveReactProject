@@ -59,9 +59,9 @@ const FeaturesCarousel = () => {
         <p className="text-lg text-green-500 mt-2">What sets Skill Lake AI LMS apart</p>
       </div>
 
-      <div className="flex overflow-x-auto no-scrollbar">
+      <div className="flex overflow-x-hidden relative">
         {visibleSlides.map((item, index) => (
-          <div key={index} className="flex-shrink-0 w-full md:w-1/3 p-4">
+          <div key={index} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-4 relative">
             <div className="bg-white rounded-lg shadow-lg h-full p-6 flex flex-col justify-between">
               <div className="flex items-center mb-4">
                 <div className="bg-green-500 text-white rounded-full p-3">
@@ -76,7 +76,7 @@ const FeaturesCarousel = () => {
         ))}
         {visibleSlides.length < 3 && (
           Array.from({ length: 3 - visibleSlides.length }).map((_, index) => (
-            <div key={`empty-${index}`} className="flex-shrink-0 w-full md:w-1/3 p-4"></div>
+            <div key={`empty-${index}`} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-4"></div>
           ))
         )}
       </div>
@@ -84,19 +84,20 @@ const FeaturesCarousel = () => {
         {data.map((_, index) => (
           <span
             key={index}
-            className={`inline-block w-3 h-3 mx-1 rounded-full cursor-pointer ${index >= currentSlide && index < currentSlide + 3 ? 'bg-green-500' : 'bg-gray-300'}}
-            onClick={() => setCurrentSlide(index)`}
+            className={`inline-block w-3 h-3 mx-1 rounded-full cursor-pointer ${index >= currentSlide && index < currentSlide + 3 ? 'bg-green-500' : 'bg-gray-300'}`}
+            onClick={() => setCurrentSlide(index)}
           ></span>
         ))}
       </div>
+      {/* Arrows for all screens */}
       <button
-        className="absolute left-0 top-0 mt-4 md:mt-8 ml-3 md:ml-8 bg-white text-gray-500 rounded-full shadow-md p-3"
+        className="absolute left-2 sm:left-4 top-[22rem] md:top-[22rem] lg:top-[20rem]  transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-3 z-10"
         onClick={prevSlide}
       >
         <FaChevronLeft />
       </button>
       <button
-        className="absolute right-0 top-0 mt-4 md:mt-8 mr-3 md:mr-8 bg-white text-gray-500 rounded-full shadow-md p-3"
+        className="absolute right-2 sm:right-4 top-[22rem] md:top-[22rem] lg:top-[20rem]  transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-3 z-10"
         onClick={nextSlide}
       >
         <FaChevronRight />

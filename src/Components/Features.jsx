@@ -1,10 +1,13 @@
 import React from 'react';
 import OIP from '../assets/OIP.jpg';
 import aiml from '../assets/aiml.png';
-
+import { useEffect } from 'react';
 const Features = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
-    <div className='p-10'>
+    <div className='p-5'>
       <header
         className="bg-cover bg-center h-64 text-white"
         style={{ backgroundImage: `url(${OIP})` }}>

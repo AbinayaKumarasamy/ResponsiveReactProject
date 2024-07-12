@@ -1,6 +1,9 @@
 import React from 'react';
-
+import { useState } from 'react';
 const ContactUs = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div>
       <div className="bg-gray-500  bg-center bg-no-repeat shadow-md">

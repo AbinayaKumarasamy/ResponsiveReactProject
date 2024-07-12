@@ -3,10 +3,13 @@ import emptraining from '../assets/emptraining.jpg';
 import custraining from '../assets/custraining.jpg';
 import contraining from '../assets/contraining.jpg';
 import usecase from '../assets/usecase.png';
-
+import { useEffect } from 'react';
 const UseCase = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
-    <div className='mt-[6rem]'>
+    <div className='p-5 mt-[3rem]'>
       <div className='py-8 px-4 md:px-16 text-center font-bold text-2xl md:text-4xl text-blue-900'>
         Use Cases and Product Tour
       </div>

@@ -14,7 +14,6 @@ import Carousel3 from '../Components/Carousel3'
 const HomePage = () => {
   return (
     <div className='text-black'>
-      {/* <div><NavBar/></div> */}
       <div><Page1/></div>
       <div><Carousel/></div>
       <div><Carousel3/></div>
@@ -24,7 +23,6 @@ const HomePage = () => {
       <div><Fivebrothers/></div>
       <div><Midpage/></div>
       <div><Demopage/></div>
-      {/* <div><Footer/></div> */}
 
     </div>
   )

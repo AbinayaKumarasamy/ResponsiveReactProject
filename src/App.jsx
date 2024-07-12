@@ -24,7 +24,16 @@ import PerformanceReviewSystem from './Components/PerformanceReviewSystem'
 import Industry from './Components/Industry'
 import RequestDemo from './Components/RequestDemo'
 import Download from './Components/Download'
+import LearningManagementSystem from './Components/LearningManagementSystem'
+import LmsMobileAppSolution from './Components/LmsMobileAppSolution'
+import LearningExperiencePlatform from './Components/LearningExperiencePlatform'
+import LearningAndDevelopmentPlatform from './Components/LearningAndDevelopmentPlatform'
+import SearchButton from './Components/SearchButton'
+import { useEffect } from "react";
 const App = () => {
+    useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
 
     <div>
@@ -51,8 +60,13 @@ const App = () => {
         <Route path="/Performancereviewsystem" element={<PerformanceReviewSystem/>}/>
         <Route path="/Industry" element={<Industry/>}/>
         <Route path="/Aboutus" element={<AboutUs/>}/>
-        <Route path="/Requestdemo" element={<RequestDemo/>}/>
+        <Route path="/RequestDemo" element={<RequestDemo/>}/>
         <Route path="/Download" element={<Download/>}/>
+        <Route path="/Learningmanagementsystem" element={<LearningManagementSystem/>}/>
+        <Route path="/Learninganddevelopmentplatform" element={<LearningAndDevelopmentPlatform/>}/>
+        <Route path="/Learningexperienceplatform" element={<LearningExperiencePlatform/>}/>
+        <Route path="/LmsMobileAppSolution" element={<LmsMobileAppSolution/>}/>
+        <Route path="/Searchbutton" element={<SearchButton/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import React from 'react';
 import deskImage from '../assets/desk.jpeg';
-
+import { useEffect } from 'react';
 const AboutUsAndMissionPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">

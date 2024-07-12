@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import desk from '../assets/desk.jpeg';
+import { useEffect } from 'react';
 const Blog = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 4;
   const totalPages = 5;
@@ -42,7 +46,7 @@ const Blog = () => {
   };
 
   return (
-    <div className='mt-[5rem]'>
+    <div className='p-5 mt-[3rem]'>
       <div className="relative bg-cover bg-center h-64" style={{ backgroundImage: `url(${desk})` }}>
         <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 md:px-8">

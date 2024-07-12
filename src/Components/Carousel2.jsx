@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { default as image1, default as image3 } from '../assets/image.jpeg';
-import { default as image2, default as image4 } from '../assets/images.jpeg';
+import image1 from '../assets/images.jpeg';
+import image2 from '../assets/images.jpeg';
+import image3 from '../assets/images.jpeg';
+import image4 from '../assets/images.jpeg';
 
 const responsive = {
   superLargeDesktop: {
@@ -45,6 +47,7 @@ const slides = [
 const CustomCarousel = ({ deviceType }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef(null);
+
   const handleNext = () => {
     if (carouselRef.current) {
       carouselRef.current.next();
@@ -64,25 +67,24 @@ const CustomCarousel = ({ deviceType }) => {
           <div className="text-black text-xl md:text-3xl font-bold">Enhancing Learning & Development for Every Scenario</div>
           <button className="mt-4 px-4 py-2 md:px-6 md:py-2 bg-green-400 text-white border border-green-400 rounded-lg shadow-lg hover:bg-green-500 transition-colors duration-300 ease-in-out">See All Use Cases</button>
         </div>
-        <div className="w-full md:w-2/3 mt-4 md:mt-0 relative">
+        <div className="w-full md:w-2/3 mt-4 md:mt-0 relative p-5">
           <Carousel
-            ref={carouselRef} 
-            swipeable={false}
-            draggable={false}
+            ref={carouselRef}
+            swipeable={true}
+            draggable={true}
             showDots={true}
-            arrows={false} 
+            arrows={false}
             responsive={responsive}
-            ssr={true} 
+            ssr={true}
             infinite={true}
-            autoPlay={true} 
+            autoPlay={true}
             autoPlaySpeed={2000}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             deviceType={deviceType}
-            dotListClass="custom-dot-list-style"
+            dotListClass="custom-dot-list-style mt-20" // Add margin to the dot list
             itemClass="carousel-item-padding-40-px"
             renderDotsOutside={true}
             beforeChange={(nextSlide) => setCurrentSlide(nextSlide)}
@@ -96,23 +98,10 @@ const CustomCarousel = ({ deviceType }) => {
               </div>
             ))}
           </Carousel>
-          <div className="flex justify-end mt-4">
-            <button
-              onClick={handlePrev}
-              className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg focus:outline-none bg-green-400 text-white"
-            >
-              <span className="text-white text-2xl">&#8249;</span>
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg focus:outline-none ml-4 bg-green-400 text-white"
-            >
-              <span className="text-white text-2xl">&#8250;</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default CustomCarousel;

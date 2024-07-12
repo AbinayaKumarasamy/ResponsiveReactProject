@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import desk from '../assets/desk.jpeg'; 
 import image from '../assets/image.jpeg';
-
 const WhatsNew = () => {
   const [openSection, setOpenSection] = useState(null);
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
 
   return (
     <div className="mt-[5rem]">

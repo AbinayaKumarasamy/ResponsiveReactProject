@@ -34,6 +34,9 @@ const testimonials = [
 ];
 
 const  TrainingManagementSystem = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [openFAQIndex, setOpenFAQIndex] = useState(null);
 

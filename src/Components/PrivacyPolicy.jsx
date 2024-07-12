@@ -1,7 +1,10 @@
 import React from 'react';
 import headerImage from '../assets/desk.jpeg'; 
-
+import { useEffect } from 'react';
 const PrivacyPolicy = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className="bg-gray-100 min-h-screen">
       <div className="relative h-64 bg-cover bg-center" style={{ backgroundImage: `url(${headerImage})` }}>

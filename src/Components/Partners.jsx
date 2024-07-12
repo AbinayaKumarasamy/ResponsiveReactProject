@@ -1,8 +1,11 @@
 import React from 'react';
 import { FaChartLine, FaHandshake, FaUserTie } from 'react-icons/fa';
 import partnerImage from '../assets/image.jpeg'; // Adjust the path accordingly
-
+import { useEffect } from 'react';
 const PartnerPage = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className='mt-[5rem]'>
     <div className="bg-blue-100">

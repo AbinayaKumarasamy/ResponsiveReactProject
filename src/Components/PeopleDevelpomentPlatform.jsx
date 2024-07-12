@@ -4,6 +4,7 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import exampleImage from '../assets/image.jpeg';
 import image from '../assets/emptraining.jpg'
 import icon from '../assets/usecase.png'
+import { useEffect } from 'react';
 const faqs = [
   {
     question: 'What is the return policy?',
@@ -34,6 +35,9 @@ const testimonials = [
 ];
 
 const PeopleDevelpmentPlatform = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [openFAQIndex, setOpenFAQIndex] = useState(null);
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import pricepage from '../assets/pricepage.jpeg';
 import top from '../assets/top.jpeg';
-
+import { useEffect } from 'react';
 const Casestudy = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className="mt-[5rem] bg-gray-100">
       <div className="relative w-full h-48 bg-cover bg-center" style={{ backgroundImage: `url(${top})` }}>

@@ -5,6 +5,7 @@ import exampleImage from '../assets/image.jpeg';
 import image from '../assets/emptraining.jpg'
 import icon from '../assets/usecase.png'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useEffect } from 'react';
 const faqs = [
   {
     question: 'What is the return policy?',
@@ -36,6 +37,9 @@ const testimonials = [
 ];
 
 const PeopleDevelpmentPlatform = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [openFAQIndex, setOpenFAQIndex] = useState(null);
 
@@ -58,6 +62,7 @@ const PeopleDevelpmentPlatform = () => {
     },
     {
       icon: "Ownership & Accountability",
+      label: "Sample Video",
       category: "2D Explainer Videos",
       title: "Make Ownership & Accountability a Core Part of Your Workplace"
     },
@@ -72,11 +77,11 @@ const PeopleDevelpmentPlatform = () => {
   const totalSlides = data.length;
 
   const nextSlide = () => {
-    setCurrentSlide(current => (current === totalSlides - 1 ? 0 : current + 1));
+    setCurrentSlide((current) => (current + 1) % totalSlides);
   };
 
   const prevSlide = () => {
-    setCurrentSlide(current => (current === 0 ? totalSlides - 1 : current - 1));
+    setCurrentSlide((current) => (current - 1 + totalSlides) % totalSlides);
   };
 
   const visibleSlides = [
@@ -84,6 +89,7 @@ const PeopleDevelpmentPlatform = () => {
     data[(currentSlide + 1) % totalSlides],
     data[(currentSlide + 2) % totalSlides],
   ];
+
   return (
     <div>
     
@@ -277,102 +283,51 @@ const PeopleDevelpmentPlatform = () => {
 </div>
 
 
-    <div className="bg-gray-100 py-16">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">Frequently Asked Questions</h2>
-          <div className="bg-white p-6 rounded-lg shadow-md mb-4">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => toggleFAQ(0)}
-            >
-              <h3 className="text-xl font-semibold">What is the return policy?</h3>
-              {openFAQIndex === 0 ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {openFAQIndex === 0 && <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, hic!</p>}
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md mb-4">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => toggleFAQ(1)}
-            >
-              <h3 className="text-xl font-semibold">How do I track my order?</h3>
-              {openFAQIndex === 1 ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {openFAQIndex === 1 && <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, hic!</p>}
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md mb-4">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => toggleFAQ(2)}
-            >
-              <h3 className="text-xl font-semibold">Can I purchase items in bulk?</h3>
-              {openFAQIndex === 2 ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {openFAQIndex === 2 && <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, hic!</p>}
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md mb-4">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => toggleFAQ(3)}
-            >
-              <h3 className="text-xl font-semibold">What payment methods are accepted?</h3>
-              {openFAQIndex === 3 ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {openFAQIndex === 3 && <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, hic!</p>}
-          </div>
-        </div>
-      </div>
-    
-
-
-      <div className="container mx-auto py-12 px-4 relative">
-      <div className="flex overflow-x-auto no-scrollbar space-x-4">
+<div className="container mx-auto py-12 px-4 relative">
+      <div className="flex overflow-hidden">
         {visibleSlides.map((item, index) => (
-          <div key={index} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-4">
-            <div className="bg-white rounded-lg shadow-lg h-full p-6 flex flex-col justify-between">
-              <div className="relative">
+          <div key={index} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-2">
+            <div className="bg-white rounded-lg shadow-lg h-full p-4 flex flex-col justify-between">
+              <div className="relative flex justify-between items-center mb-2">
+                <div className="text-lg font-bold">{item.icon}</div>
                 {item.label && (
-                  <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl">
+                  <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl">
                     {item.label}
                   </span>
                 )}
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold">{item.icon}</h3>
-                </div>
               </div>
-              <h4 className="text-blue-600 mb-2">{item.category}</h4>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <h4 className="text-blue-600 mb-1">{item.category}</h4>
+              <h3 className="text-md font-semibold mb-1">{item.title}</h3>
             </div>
           </div>
         ))}
-        {visibleSlides.length < 3 && (
-          Array.from({ length: 3 - visibleSlides.length }).map((_, index) => (
-            <div key={`empty-${index}`} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-4"></div>
-          ))
-        )}
       </div>
       <div className="flex justify-center mt-4">
         {data.map((_, index) => (
           <span
             key={index}
-            className={`inline-block w-3 h-3 mx-1 rounded-full cursor-pointer ${index >= currentSlide && index < currentSlide + 3 ? 'bg-green-500' : 'bg-gray-300'}`}
+            className={`inline-block w-3 h-3 mx-1 rounded-full cursor-pointer ${index === currentSlide ? 'bg-green-500' : 'bg-gray-300'}`}
             onClick={() => setCurrentSlide(index)}
           ></span>
         ))}
       </div>
       <button
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-3"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-2"
         onClick={prevSlide}
       >
         <FaChevronLeft />
       </button>
       <button
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-3"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-500 rounded-full shadow-md p-2"
         onClick={nextSlide}
       >
         <FaChevronRight />
       </button>
     </div>
+    
+
+
+      
     
     </div>
   );

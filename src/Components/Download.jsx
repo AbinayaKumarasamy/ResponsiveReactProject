@@ -1,7 +1,7 @@
 import React from 'react';
 import images from '../assets/desk.jpeg';
 import image from '../assets/card1.jpeg';
-
+import { useEffect } from 'react';
 const resources = [
   {
     title: "Developing Leadership Skills: L&D for Managers and Executives",
@@ -51,6 +51,9 @@ const resources = [
 ];
 
 const ResourceHub = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: `url(${images})` }}>

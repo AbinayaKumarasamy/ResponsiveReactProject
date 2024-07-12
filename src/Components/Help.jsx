@@ -2,8 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import desk from '../assets/desk.jpeg';
-
+import { useEffect } from 'react';
 const Help = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className="mt-[5rem] bg-gray-100">
       <header className="relative bg-cover bg-center h-56" style={{ backgroundImage: `url(${desk})` }}>

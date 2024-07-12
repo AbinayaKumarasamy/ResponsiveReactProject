@@ -63,7 +63,7 @@ const NavBar = () => {
                     </button>
                 </div>
                 {/* Desktop navigation menu */}
-                <div className="hidden lg:flex lg:items-center lg:space-x-4 w-full justify-end">
+                <div className="hidden lg:flex lg:items-center lg:space-x-4 w-full justify-end items-center">
                     <Link to="/Features" className="px-2 py-2 text-gray-900 hover:text-blue-500">Features</Link>
                     <div className="relative group" onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={() => handleMouseLeave('solutions')}>
                         <button 
@@ -74,10 +74,10 @@ const NavBar = () => {
                         </button>
                         {dropdownOpen.solutions && (
                             <div className="absolute bg-white shadow-lg mt-1 rounded-md z-10 whitespace-nowrap">
-                                <Link to="/Corporatetrainingplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning Management System</Link>
-                                <Link to="/Corporatetrainingplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">LMS Mobile App</Link>
-                                <Link to="/Corporatetrainingplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning and Development Platform</Link>
-                                <Link to="/Corporatetrainingplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning Experience Platform</Link>
+                                <Link to="/Learningmanagementsystem" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning Management System</Link>
+                                <Link to="/LmsMobileAppSolution" className="block px-4 py-2 text-gray-900 hover:text-blue-500">LMS Mobile App</Link>
+                                <Link to="/Learninganddevelopmentplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning and Development Platform</Link>
+                                <Link to="/Learningexperienceplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Learning Experience Platform</Link>
                                 <Link to="/Peopledevelpmentplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">People Development Platform</Link>
                                 <Link to="/Corporatetrainingplatform" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Corporate Training Platform </Link>
                                 <Link to="/TrainingManagementSystem" className="block px-4 py-2 text-gray-900 hover:text-blue-500">Training Management System</Link>

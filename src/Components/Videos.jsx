@@ -1,8 +1,11 @@
 import React from 'react';
 import pricepage from '../assets/pricepage.jpeg';
 import top from '../assets/top.jpeg'; 
-
+import { useEffect } from 'react';
 const Videos = () => {
+  useEffect (() => {
+    window.scrollTo(0,0);
+    },[]);
   return (
     <div className="p-12">
       <div 
@@ -33,7 +36,7 @@ const Videos = () => {
         <div className="bg-white border border-gray-200 rounded-md shadow">
           <div className="p-3">
             <h5 className="mb-2 text-base sm:text-lg tracking-tight text-gray-900 text-center">
-              Ensure Continuous Improvement with Learning Journals Improvement
+              Ensure Continuous Improvement Learning Journals Improvement
             </h5>
           </div>
           <img className="w-full h-48 object-cover" src={pricepage} alt="Ensure Continuous Improvement with Learning Journals Improvement" />
